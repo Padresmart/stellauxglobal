@@ -1,0 +1,68 @@
+.hero {
+  background-image: url('../assets/trad-couple.webp'); /* Add your image */
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.hero-btn {
+  background-color: #4b00ff;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #e6e9ff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem;
+    display: none; 
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
