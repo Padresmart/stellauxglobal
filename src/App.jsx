@@ -6,7 +6,7 @@ import ThankYou from './components/ThankYou';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/stellauxglobal">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/book" element={<Book />} />

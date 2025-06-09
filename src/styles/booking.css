@@ -243,4 +243,20 @@ input[type="date"]::-moz-focus-inner {
   .form-card {
     padding: 10px;
   }
+
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  
+  .icon-input input[type="date"] {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
