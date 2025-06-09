@@ -265,10 +265,37 @@ input[type="date"]::-moz-focus-inner {
     box-sizing: border-box;
     font-size: 1rem;
     height: 44px;
-    padding-left: 2.2rem !important;
+    padding-left: 2.7rem !important; /* Match other icon-inputs for alignment */
+    background-color: #f8fafc;
+    color: #3730a3;
+    position: relative;
+    z-index: 1;
   }
-  .form-group:not(.icon-input) input[type="date"] {
-    padding-left: 14px !important;
+  .input-icon.calendar-icon {
+    left: 16px; /* Keep icon left and out of the way */
+    font-size: 1.1rem;
+    z-index: 2;
+    pointer-events: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  /* Make sure the calendar icon never overlaps the date text */
+  .icon-input .input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  /* Hide the native calendar icon for a cleaner look (optional) */
+  .icon-input input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    z-index: 3;
+    margin-right: 4px;
+    height: 22px;
+    width: 22px;
+    background: transparent;
+    position: relative;
   }
   .submit-button-container {
     margin-top: 18px;
