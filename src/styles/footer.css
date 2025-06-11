@@ -16,6 +16,15 @@
   width: 100px;
   margin: 0 auto;
   display: block;
+  background: #e0e7ff;          
+  border-radius: 50%;            
+  box-shadow: 0 2px 12px #c7d2fe33;
+  padding: 12px;                
+  transition: box-shadow 0.2s;
+}
+
+.footer-logo img:hover {
+  box-shadow: 0 4px 24px #a5b4fc55;
 }
 
 .footer-section {

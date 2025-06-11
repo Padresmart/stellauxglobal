@@ -33,8 +33,6 @@ const Book = () => {
     }
 
     
-    alert('Booking request submitted successfully!');
-    
     setFormData({
       fullName: '',
       email: '',
