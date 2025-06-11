@@ -116,15 +116,21 @@
     display: block;
     position: relative;
     z-index: 200;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #4b00e0;
   }
   .navbar {
     padding: 14px 10px;
   }
 }
 
-/* Optional: darken background when menu is open */
+/* Hide menu icon on desktop */
+.mobile-menu-icon {
+  display: none;
+}
 @media (max-width: 900px) {
-  body.menu-open {
-    overflow: hidden;
+  .mobile-menu-icon {
+    display: block;
   }
 }
