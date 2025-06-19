@@ -17,6 +17,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">Stellaux Global</div>
+     
 
       <div className={`nav-links-container ${isMobile ? 'open' : ''}`}>
         <ul className="nav-links">

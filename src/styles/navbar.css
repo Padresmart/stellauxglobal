@@ -1,21 +1,20 @@
 /* === BASE STYLES === */
 .navbar {
+  position: relative;
+  background-color: #f8f9fa;
+  padding: 14px 32px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 18px 24px;
-  background: #fff;
-  box-shadow: 0 2px 12px rgba(67,56,202,0.06);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 
 .logo {
-  font-size: 1.5rem;
   font-weight: 700;
-  color: #4b00e0;
+  font-size: 22px;
   letter-spacing: 1px;
+  color: #1a1a1a;
 }
 
 .nav-links-container {
@@ -24,71 +23,163 @@
 }
 
 .nav-links {
-  display: flex;
-  gap: 2rem;
   list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-links li a,
-.nav-links li .book-btn {
+.nav-links li a {
   text-decoration: none;
-  color: #4b00e0;
+  color: #222;
   font-weight: 500;
-  font-size: 1.08rem;
-  transition: color 0.2s;
+  font-size: 16px;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
 }
 
-.nav-links li .book-btn {
-  background: linear-gradient(90deg, #5c4dff 0%, #6366f1 100%);
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #0056b3;
+  border-bottom: 2px solid #0056b3;
+  outline: none;
+}
+
+.book-btn {
+  background-color: #0056b3;
   color: #fff;
-  padding: 8px 22px;
+  padding: 10px 22px;
   border-radius: 6px;
   font-weight: 600;
-  margin-left: 8px;
-  box-shadow: 0 2px 8px rgba(92,77,255,0.08);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.book-btn:hover,
+.book-btn:focus {
+  background-color: #003d80;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  outline: none;
 }
 
 /* === MOBILE RESPONSIVE STYLES === */
 .mobile-menu-icon {
+  font-size: 34px;
+  cursor: pointer;
   display: none;
+  z-index: 1101;
+  background: #fff;
+  border: none;
+  outline: none;
+  color: #0056b3;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-@media (max-width: 900px) {
+.mobile-menu-icon:hover,
+.mobile-menu-icon:focus {
+  background: #e6f0fa;
+  color: #003d80;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+
   .nav-links-container {
     position: fixed;
-    top: 0; right: 0;
+    top: 0;
+    left: -100%;
+    width: 80%;
     height: 100vh;
-    width: 0;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: -2px 0 16px rgba(67,56,202,0.08);
+    background-color: #f8f9fa;
+    padding: 24px 20px;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: left 0.3s ease-in-out;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-top: 80px;
-    transition: width 0.3s cubic-bezier(.4,0,.2,1);
-    z-index: 150;
+    z-index: 1100;
+    display: none;
+    padding-top: 0;
   }
 
   .nav-links-container.open {
-    width: 75vw;
-    min-width: 220px;
-    max-width: 340px;
-    padding-left: 32px;
-    padding-right: 12px;
+    left: 0;
+    display: flex;
   }
 
   .nav-links {
+    display: flex !important;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0;
+    gap: 4px; /* Even closer, but not crowded */
+    padding-top: 0;
+  }
+
+  .nav-links li {
     width: 100%;
   }
 
-  .mobile-menu-icon {
+  .nav-links li a {
+    font-size: 22px; /* Larger font for clarity */
+    padding: 16px 0 12px 32px; /* More left padding */
     display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    color: #4b00e0;
-    z-index: 200;
+    width: 100%;
+    color: #111; /* Darker for contrast */
+    font-weight: 900; /* Maximum boldness */
+    background: #fff;
+    border-radius: 6px;
+    border-bottom: 1.5px solid #e0e0e0;
+    text-align: left;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    overflow: visible;
+    white-space: normal; /* Allow wrapping if needed */
+    text-overflow: unset;
+    word-break: break-word;
+  }
+
+  .nav-links li a:active,
+  .nav-links li a:focus {
+    background: #e6f0fa;
+    color: #0056b3;
+    outline: none;
+  }
+
+  .nav-links li:first-child a {
+    padding-top: 20px;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    margin-top: 32px;
+    border-radius: 8px;
+    text-align: center;
+  }
+}
+
+/* Hide hamburger menu on desktop */
+@media (min-width: 1024px) {
+  .mobile-menu-icon {
+    display: none;
   }
 }
