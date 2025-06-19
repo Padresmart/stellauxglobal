@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 import '../styles/global.css';
 
-
 export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -17,10 +16,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-       
-   
-
       <div className="logo">Stellaux Global</div>
+
       <div className={`nav-links-container ${isMobile ? 'open' : ''}`}>
         <ul className="nav-links">
           <li><Link to="/" onClick={closeMobileMenu}>Home</Link></li>
@@ -30,6 +27,7 @@ export default function Navbar() {
           <li><Link to="/book" className="book-btn" onClick={closeMobileMenu}>Book Now</Link></li>
         </ul>
       </div>
+
       <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
         {isMobile ? '✖' : '☰'}
       </div>
